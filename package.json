@@ -1,0 +1,24 @@
+{
+  "name": "zqyan-cli",
+  "version": "1.0.5",
+  "description": "脚手架测试",
+  "scripts": {
+    "test": "node script/init.js test"
+  },
+  "bin": {
+    "create-temp": "bin/main.js"
+  },
+  "type": "module",
+  "author": "zqy",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "import-from": "^4.0.0",
+    "inquirer": "^9.2.14",
+    "minimist": "^1.2.8",
+    "mkdirp": "^3.0.1",
+    "osenv": "^0.1.5",
+    "resolve-from": "^5.0.0",
+    "yeoman-environment": "^4.3.0"
+  }
+}
