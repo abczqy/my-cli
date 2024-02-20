@@ -20,7 +20,7 @@ import fs from 'fs'
 import chalk from 'chalk'
 import resolveFrom from "resolve-from"
 import requireFrom from 'import-from'
-import osenv from 'osenv'
+// import osenv from 'osenv'
 import { mkdirp } from 'mkdirp'
 import path from 'path'
 import inquirer from "inquirer"
@@ -33,8 +33,9 @@ import { fileURLToPath } from "url"
 const args = minimist(process.argv)
 const yoemanEnv = createEnv()
 const cmdDirName = 'script'
-const homeDir = osenv.home()
-const tplDir = path.resolve(homeDir, '.build')
+// const homeDir = osenv.home()
+const homeDir = path.resolve(process.execPath, '..')
+const tplDir = path.resolve(homeDir, '.epms-cli-temps')
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // const pkgText = fs.readFileSync(path.resolve(__dirname, './package.json'), 'utf8')
 // const pkg = JSON.parse(pkgText)

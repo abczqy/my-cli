@@ -15,7 +15,7 @@ export default async function() {
   }
   // const path = this.resolveFrom(this.dir.tpl, `node_modules/${pkgName}`)
   this.yoemanEnv.register(`${this.dir.tpl}/node_modules/${pkgName}`, pkgName)
-  this.yoemanEnv.run(pkgName).then(() => {
-    this.console('happy coding', 'green')
+  this.yoemanEnv.run(pkgName, this.args).then(() => {
+    this.console('一切才刚刚开始...', 'green')
   })
 }
