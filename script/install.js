@@ -11,7 +11,7 @@ export default async function(pkgName) {
   }
   this.console(`正在安装最新版的 ${pkgName} ...`)
   try {
-    execSync(`npm i ${pkgName}@latest -S`, { cwd: this.dir.tpl })
+    execSync(`npm i ${pkgName}@latest -S --registry=https://registry.npmmirror.com`, { cwd: this.dir.tpl })
     this.console(`升级完成`, 'green')
   } catch (e) {
     this.console(`安装失败，请检查包名称是否正确 ${pkgName}`, 'red')

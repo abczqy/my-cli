@@ -14,8 +14,8 @@ class Utils {
   getInstalledStatus(pkgName, targetDir) {
     const genObj = this.getInstalledPkgs(targetDir);
     if (!genObj[pkgName]) return 0;
-    const lts = execSync(`npm view ${pkgName} version --json`) + '' // buffer 转 string
-    const current = this.requireFrom(targetDir, path.join(pkgName, "package.json")).version;
+    const lts = execSync(`npm view ${pkgName} version --registry=https://registry.npmmirror.com --json`) // buffer 转 string
+    const current = this.requireFrom(targetDir, path.join(pkgName, "package.json")).version + '';
     if (current === lts.trim()) return 2;
     return 1;
   }
@@ -56,7 +56,7 @@ class Utils {
         );
         this.console(`安装${builder}中...`);
         execSync(
-          `npm i ${builder}@latest -S`,
+          `npm i ${builder}@latest -S --registry=https://registry.npmmirror.com`,
           { cwd: process.cwd() }
         );
         break;
